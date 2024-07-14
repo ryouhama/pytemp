@@ -9,19 +9,19 @@ BACK_UP_DIR_PATH: Final[str] = ".backup"
 FILE_SUFFIX_FORMAT: Final[str] = "%Y%m%d%H%M%S"
 
 
-def create_backup():
+def create_backup() -> str:
     current_datatime = datetime.datetime.now()
 
     if not os.path.isdir(BACK_UP_DIR_PATH):
         os.mkdir(BACK_UP_DIR_PATH)
 
-    shutil.copy(
+    return shutil.copy(
         "pyproject.toml",
         f"{BACK_UP_DIR_PATH}/pyproject.toml.{current_datatime.strftime(FILE_SUFFIX_FORMAT)}",
     )
 
 
-def update_pyproject(project_name: str, project_description: str):
+def overwrite_pyproject(project_name: str, project_description: str):
     pyproject = Path(PYPROJECT_FILE_NAME)
     content = (
         pyproject.read_text()

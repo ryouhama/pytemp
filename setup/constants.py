@@ -1,8 +1,5 @@
 from typing import Final
 
-YES = "YES"
-NO = "NO"
-
 
 class COLOR:
     BLACK: Final[str] = "\033[30m"  # (文字)黒

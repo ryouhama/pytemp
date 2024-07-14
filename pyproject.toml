@@ -21,6 +21,7 @@ dev-dependencies = []
 
 [tool.rye.scripts]
 setup = "python setup/script.py"
+setup_test = "pytest setup/tests.py -vv"
 
 [tool.hatch.metadata]
 allow-direct-references = true
